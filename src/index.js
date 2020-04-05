@@ -2,14 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import StoryPointsApp, { Store } from './components/StoryPointsApp';
+// import StoryPointsApp, { Store } from './components/StoryPointsApp';
+import AsyncComponent, { Store } from './components/AsyncComponent';
 import * as serviceWorker from './serviceWorker';
 
-const storePointsAppStore = new Store();
+// const storePointsAppStore = new Store();
+
+const asyncStore = new Store();
 
 ReactDOM.render(
   <React.StrictMode>
-    <StoryPointsApp store={storePointsAppStore} />
+    {/* <StoryPointsApp store={storePointsAppStore} /> */}
+    <AsyncComponent store={asyncStore} />
   </React.StrictMode>,
   document.getElementById('root')
 );
