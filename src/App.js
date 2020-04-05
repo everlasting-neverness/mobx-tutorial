@@ -1,6 +1,6 @@
 import React from 'react';
 import Counter from './components/Counter';
-import { observable, configure, action } from 'mobx';
+import { observable, configure, action, when, autorun } from 'mobx';
 
 configure({ enforceActions: 'observed' });
 
@@ -27,6 +27,18 @@ const nickName = observable(
       name: 'nickNameObservableObject'
     }
 );
+
+when(
+    () => nickName.age > 35,
+    () => { alert('The age is more than 35') }
+);
+
+autorun(() => {
+    alert(`The age is ${nickName.age} right now`);
+}, {
+    name: 'Custom autorun',
+    delay: 3000,
+})
 
 // const todos = observable([
 //   {

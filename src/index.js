@@ -8,12 +8,13 @@ import * as serviceWorker from './serviceWorker';
 
 // const storePointsAppStore = new Store();
 
-const asyncStore = new Store();
+// const asyncStore = new Store();
 
 ReactDOM.render(
   <React.StrictMode>
+    <App />
     {/* <StoryPointsApp store={storePointsAppStore} /> */}
-    <AsyncComponent store={asyncStore} />
+    {/* <AsyncComponent store={asyncStore} /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
