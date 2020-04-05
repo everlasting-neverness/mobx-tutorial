@@ -9,7 +9,8 @@ import { observer } from 'mobx-react';
     render() {
         return (
             <div>
-                <h1>{this.props.store && this.props.store.count}</h1>
+                <h1>{this.props.store.age}</h1>
+                <h2>{this.props.store.nickName}</h2>
                 <button onClick={this.handleDecrement}>-1</button>
                 <button onClick={this.handleIncrement}>+1</button>
             </div>
